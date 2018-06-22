@@ -1,0 +1,20 @@
+package com.example.lukeledvina.retrofitworkshop;
+
+import com.google.gson.annotations.SerializedName;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
+
+public class RetrofitMusicApiCalls {
+    @GET("{artist}/{title}")
+    Call<SongLyrics> getSongLyrics(@Path("artist") String artist,@Path("title") String title);
+
+
+    class SongLyrics {
+
+        @SerializedName("lyrics")
+        private String lyrics;
+
+    }
+}
